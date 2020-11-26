@@ -20,24 +20,4 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    text: {
-        position: 'absolute',
-        left: -0.59,
-        right: -0.59,
-        top: 0,
-        bottom: 0,
-
-        fontfamily: 'Titillium Web',
-        fontstyle: 'normal',
-        fontweight: 'bold',
-        fontsize: 24,
-        lineheight: 37,
-        /* identical to box height */
-
-        display: 'flex',
-        alignitems: 'center',
-        textalign: 'center',
-
-        color: '#9200D6'
-    }
   });
