@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import Logo from './../../assets/ImagemEdux.png'
+import { useFonts } from 'expo-font';
 
 // Async Storage = semelhante ao localStorage
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,6 +9,11 @@ import { color } from 'react-native-reanimated';
 import { TitilliumWeb_600SemiBold } from '@expo-google-fonts/titillium-web';
 
 const Login = ({ navigation }) => {
+    let [fontsLoaded] = useFonts({
+        'TitilliumWeb_900Black': require('../../assets/fonts/TitilliumWeb_900Black.ttf'),
+        'TitilliumWeb_400Regular': require('../../assets/fonts/TitilliumWeb_400Regular.ttf'),
+        'TitilliumWeb_700Bold': require('../../assets/fonts/TitilliumWeb_700Bold.ttf'),
+      });
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -31,7 +37,7 @@ const Login = ({ navigation }) => {
         }
         
 
-        fetch('http://192.168.15.37:5000/api/Login', {
+        fetch(' http://192.168.15.37:5000/api/Login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,10 +109,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#9200D6'
     },
-    placeholder: {
-        
-        
-    },
     input: {
         width: '62%',
         height: 30,
@@ -116,41 +118,42 @@ const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 6,
         backgroundColor: 'white',
-        fontFamily: 'TitilliumWeb',
-        fontWeight: 'bold',
-        paddingLeft:20
-        
+        fontFamily: 'TitilliumWeb_400Regular', fontSize: 40,
+        paddingLeft:20,
+        fontSize:14,
+        color: '#9200D6',
     },
     button: {
         backgroundColor: 'white',
         width: '62%',
         padding: 5,
         borderRadius: 6,
-        marginTop: 30,
+        marginTop: 25,
         alignItems: 'center',
         justifyContent: 'center',
         
     },
     textButton: {
         color: '#9200D6',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'TitilliumWeb_900Black',
+        fontSize:14
     },
     loginText: {
-        fontFamily: "TitilliumWeb-Regular",
+        fontFamily: "TitilliumWeb_700Bold",
         color:"white",
-        fontWeight: 700,
         fontSize:24,
-        marginTop:50,
-        marginBottom: 20
+        marginTop:40,
+        marginBottom: 10
 
     },
     image: {
         width:
-            219,
+            210,
         height:
-            71,
+            66,
         bottom:
-            -20,
+            -25,
 
 
     }
