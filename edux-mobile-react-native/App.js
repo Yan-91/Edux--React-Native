@@ -1,6 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Login from './pages/Login';
+
+// Navigations
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './pages/Home';
+
+const Drawer = createDrawerNavigator();
+const Stack  = createStackNavigator();
+
+const Autenticado = () => {
+  return(
+    <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={Home} />
+    </Drawer.Navigator>
+  )
+}
 
 import Home from './pages/Home'
 import Indisponivel from './pages/Indisponivel'
@@ -33,7 +51,7 @@ export default function App() {
         <Stack.Screen name="Cadastro" component={Indisponivel} /> */}
         <Stack.Screen name="Autenticado" component={Autenticado} />
       </Stack.Navigator>
-    </NavigationContainer>
+  </NavigationContainer>
   );
 }
 
