@@ -6,7 +6,7 @@ const Home = () => {
     return(
         <View>
             <Header/>
-            <Text>oi</Text>
+            <Text>oieee</Text>
         </View>
     )
 }
