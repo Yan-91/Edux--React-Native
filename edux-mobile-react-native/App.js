@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './pages/Login';
-
 import Home from './pages/Home'
 import Indisponivel from './pages/Indisponivel'
 

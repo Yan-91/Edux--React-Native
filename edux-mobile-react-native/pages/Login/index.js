@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     loginText: {
-        fontFamily: "TitilliumWeb-Regular",
+        fontFamily: 'TitilliumWeb-Regular',
         color:"white",
         fontWeight: 700,
         fontSize:24,
