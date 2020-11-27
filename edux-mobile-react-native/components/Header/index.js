@@ -1,22 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button, ThemeProvider, Header, Image } from 'react-native-elements';
-import logo2 from '../../assets/ImagemEdux.png'
+import { StyleSheet, Text, View, Image } from 'react-native';
+import Logo from './../../assets/ImagemEdux.png'
 
 const Headers = () => {
     return (
-        <View>
-            <Header
-                containerStyle={{
-                    backgroundColor: '#3D6DCC',
-                    justifyContent: 'space-around',}}
-                // leftComponent={ <Image source={{ logo }} style={{ width: 155, height: 50 }}/>  }
-                // rightComponent={ <Button style={{ icon: 'home', color: '#fff' }}/>}
-            >
-            </Header>
-        </View>
-    )
+            <View style={styles.navigation}>
+              <Image
+                style={styles.imageStyle}
+                source={Logo}/>
+            </View>
+          );
 }
 
 export default Headers;
  
+const styles = StyleSheet.create({
+    navigation: {
+        position: "absolute",
+        flexDirection: 'row',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "#9200D6",
+        width: '100%',
+        height: 70
+    },
+    imageStyle: {
+        width: 200,
+        height: 65,
+        right: 70,
+         
+
+    }
+  });

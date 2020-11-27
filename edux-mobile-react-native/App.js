@@ -30,7 +30,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown : false }}>
-        {/* <Stack.Screen name="Login" component={Indisponivel} /> 
+        {/* <Stack.Screen name="Login" component={Login} /> 
         <Stack.Screen name="Cadastro" component={Indisponivel} /> */}
         <Stack.Screen name="Autenticado" component={Autenticado} />
       </Stack.Navigator>
