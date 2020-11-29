@@ -53,7 +53,7 @@ const Login = ({ navigation }) => {
                     console.log(data.token);
 
                     salvar(data.token);
-                    navigation.navigate('Autenticado');
+                    navigation.navigate('Home');
                 } else {
                     alert('Dados inválidos!');
                 }

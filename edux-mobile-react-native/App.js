@@ -1,65 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './pages/Login';
-
-// Navigations
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import Home from './pages/Home';
-
-const Drawer = createDrawerNavigator();
-const Stack  = createStackNavigator();
-
-const Autenticado = () => {
-  return(
-    <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-    </Drawer.Navigator>
-  )
-}
-
 import Home from './pages/Home'
-import Indisponivel from './pages/Indisponivel'
-
+import Login from './pages/Login';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import Timeline from './pages/Timeline';
 
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
-
-const Autenticado = () => {
-  return(
-    <Tab.Navigator style={styles.navigation} initialRouteName='Home'>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Objetivo" component={Indisponivel} />
-      <Tab.Screen name="Turmas" component={Indisponivel} />
-    </Tab.Navigator>
-  )
-}
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown : false }}>
-        {/* <Stack.Screen name="Login" component={Indisponivel} /> 
-        <Stack.Screen name="Cadastro" component={Indisponivel} /> */}
-        <Stack.Screen name="Autenticado" component={Autenticado} />
+      <Stack.Navigator screenOptions={{ headerShown : false }} initialRouteName="Timeline">
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Timeline" component={Timeline} />
       </Stack.Navigator>
   </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  navigation: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: "#fff",
-  },
-});
