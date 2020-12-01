@@ -21,6 +21,8 @@ const Autenticado = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Objetivo" component={Indisponivel} />
       <Tab.Screen name="Turmas" component={Indisponivel} />
+      <Tab.Screen name="Timeline" component={Indisponivel} />
+
     </Tab.Navigator>
   )
 }
@@ -29,8 +31,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown : false }}>
-        {/* <Stack.Screen name="Login" component={Login} /> 
-        <Stack.Screen name="Cadastro" component={Indisponivel} /> */}
+        {/* <Stack.Screen name="Login" component={Login} />  */}
         <Stack.Screen name="Autenticado" component={Autenticado} />
       </Stack.Navigator>
   </NavigationContainer>
