@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './pages/Login';
 import Home from './pages/Home'
 import Indisponivel from './pages/Indisponivel'
+import Objetivo from './pages/Objetivos'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -19,7 +20,7 @@ const Autenticado = () => {
   return(
     <Tab.Navigator style={styles.navigation} initialRouteName='Home'>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Objetivo" component={Indisponivel} />
+      <Tab.Screen name="Objetivo" component ={Objetivo}/>
       <Tab.Screen name="Turmas" component={Indisponivel} />
     </Tab.Navigator>
   )
