@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Home from './pages/Home'
 import Indisponivel from './pages/Indisponivel'
 import Timeline from './pages/Timeline';
+import Alunos from './pages/Alunos';
+import Turmas from './pages/Turmas';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSchool, faChalkboardTeacher, faGraduationCap, faList } from '@fortawesome/free-solid-svg-icons'
@@ -14,9 +16,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Timeline from './pages/Timeline';
-import Alunos from './pages/Alunos';
-import Turmas from './pages/Turmas';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 
@@ -75,7 +74,6 @@ const Autenticado = () => {
             ),
           }}
       />
-    </Tab.Navigator>
     </Tab.Navigator>
   )
 }
