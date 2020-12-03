@@ -7,7 +7,7 @@ import ItemAluno from '../../components/itemAluno';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const Alunos = () => {
+const Alunos = ( {navigation} ) => {
 
     const [usuario, setUsuario] = useState([]);
     const [token, setToken] = useState([]);

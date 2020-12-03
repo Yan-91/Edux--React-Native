@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import Autenticado from '../../App'
 import aviso from '../../assets/aviso.png'
 
-const Indisponivel = () => {
+const Indisponivel = ( {} ) => {
     return(
         <View style={styles.container}>
             <Image
