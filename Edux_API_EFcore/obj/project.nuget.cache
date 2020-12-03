@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cAVooFuEK3ktk88pdqlNeUfKaxy2RSdCGAiL+IS/q0fzrFyKCrpBTzV+bpneBMh3uJfQeOPB9hvhkq5rRG9c1g==",
+  "dgSpecHash": "VxrXvgurbcPbLKVSI2ZCxGtBSPVWpEwdMCXp5VpLrNf5nXQfszddcoD2giT5gzjPek32K3iviWuIcSHH9SYJzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux---Mobile---React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
+  "projectFilePath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux--React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinicius\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\vinicius\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",

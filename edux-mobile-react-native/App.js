@@ -10,6 +10,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Timeline from './pages/Timeline';
+import Alunos from './pages/Alunos';
+import Turmas from './pages/Turmas';
 
 
 const Stack = createStackNavigator();
@@ -21,8 +23,10 @@ const Autenticado = () => {
     <Tab.Navigator style={styles.navigation} initialRouteName='Home'>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Objetivo" component={Indisponivel} />
-      <Tab.Screen name="Turmas" component={Indisponivel} />
+      <Tab.Screen name="Turmas" component={Turmas} />
       <Tab.Screen name="Timeline" component={Timeline} />
+      <Tab.Screen name="Alunos" component={Alunos} />
+
     </Tab.Navigator>
   )
 }
@@ -31,7 +35,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown : false }}>
-        <Stack.Screen name="Login" component={Login} /> 
+        {<Stack.Screen name="Login" component={Login} />}
         <Stack.Screen name="Autenticado" component={Autenticado} />
       </Stack.Navigator>
   </NavigationContainer>

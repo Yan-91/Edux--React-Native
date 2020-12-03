@@ -5645,11 +5645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux---Mobile---React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
+      "projectUniqueName": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux--React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
       "projectName": "Edux_Api_EFcore",
-      "projectPath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux---Mobile---React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
+      "projectPath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux--React-Native\\Edux_API_EFcore\\Edux_Api_EFcore.csproj",
       "packagesPath": "C:\\Users\\vinicius\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux---Mobile---React-Native\\Edux_API_EFcore\\obj\\",
+      "outputPath": "C:\\Users\\vinicius\\Documents\\Senai 2020\\2°Termo\\Edux--React-Native\\Edux_API_EFcore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinicius\\AppData\\Roaming\\NuGet\\NuGet.Config",

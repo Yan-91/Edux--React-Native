@@ -24,7 +24,7 @@ namespace Edux_Api_EFcore.Contexts
         {
             if (!optionBuilder.IsConfigured)
             {
-                optionBuilder.UseSqlServer(@"Data Source=.\\SqlExpress; Initial Catalog= Edux; Trusted_Connection=True; user id= sa; password= sa132");
+                optionBuilder.UseSqlServer("Data Source=.\\SqlExpress; Initial Catalog= Edux; Trusted_Connection=True; user id= sa; password= sa132");
                 base.OnConfiguring(optionBuilder);
             }
         }

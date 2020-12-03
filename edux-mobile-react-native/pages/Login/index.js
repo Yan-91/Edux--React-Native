@@ -5,15 +5,13 @@ import { useFonts } from 'expo-font';
 
 // Async Storage = semelhante ao localStorage
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { color } from 'react-native-reanimated';
-import { TitilliumWeb_600SemiBold } from '@expo-google-fonts/titillium-web';
 
 const Login = ({ navigation }) => {
     let [fontsLoaded] = useFonts({
         'TitilliumWeb_900Black': require('../../assets/fonts/TitilliumWeb_900Black.ttf'),
         'TitilliumWeb_400Regular': require('../../assets/fonts/TitilliumWeb_400Regular.ttf'),
         'TitilliumWeb_700Bold': require('../../assets/fonts/TitilliumWeb_700Bold.ttf'),
-      });
+    });
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -41,7 +39,6 @@ const Login = ({ navigation }) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Autorization': 'Bearer' + '@jwt'
             },
             body: JSON.stringify(corpo)
         })
@@ -53,7 +50,7 @@ const Login = ({ navigation }) => {
                     console.log(data.token);
 
                     salvar(data.token);
-                    navigation.navigate('Home');
+                    navigation.push('Autenticado');
                 } else {
                     alert('Dados inválidos!');
                 }
