@@ -1,17 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Header from '../../components/Header'
 import fotoPerfil from '../../assets/fotoPerfil.jpg'
 
 const Home = ( {navigation} ) => {
     return(
-        <SafeAreaView>
-            <ScrollView>
                 <View>
-                    <Header/>
+                    <Header navigation={navigation}/>
                     <Text style={styles.tituloRank}> RANKING GERAL </Text>
                     <View style={styles.dadosRank}>
-                        <TouchableOpacity onPress={() => navigation.push('Indisponivel')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Indisponivel')}>
                             <Image style={styles.foto} source={fotoPerfil}/>
                         </TouchableOpacity>
                         <View>
@@ -42,8 +40,6 @@ const Home = ( {navigation} ) => {
                         <Text style={styles.textoComum}></Text>
                     </View>
                 </View>
-            </ScrollView>
-        </SafeAreaView>
     )
 }
 
@@ -55,7 +51,7 @@ const styles = StyleSheet.create({
       top : 150,
       botton : '0%',
       textAlign : 'center',
-      fontSize : 36,
+      fontSize : 26,
       fontWeight: 'bold',
       fontStyle : 'black',
       color: '#9200D6'
@@ -63,49 +59,49 @@ const styles = StyleSheet.create({
     shape1: {
         position : 'relative',
         top : 250,
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
         margin : 'auto',
         marginTop:50,
         textAlign:'center',
-        padding : 40,
+        padding : 10,
         backgroundColor: '#00D65F',
     },
     shape2: {
         position : 'relative',
         top : 200,
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
         margin : 'auto',
         marginTop:50,
         textAlign:'center',
-        padding : 40,
+        padding : 10,
         backgroundColor: '#00C2EE',
     },
     shape3: {
         position : 'relative',
         top : 200,
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
         margin : 'auto',
         marginTop:50,
         textAlign:'center',
-        padding : 40,
+        padding : 10,
         backgroundColor: '#F9E800',
     },
     shape4: {
         position : 'relative',
         top : 150,
-        width: 200,
-        height: 200,
-        borderRadius: 100,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
         margin : 'auto',
         marginTop:50,
         textAlign:'center',
-        padding : 40,
+        padding : 10,
         backgroundColor: '#FF271C',
     },
     foto: {
@@ -131,7 +127,7 @@ const styles = StyleSheet.create({
     },
     textoTitulo: {
         color: '#FFF',
-        fontSize : 26,
+        fontSize : 20,
         fontWeight: 'bold',
         fontStyle : 'black',
     },
@@ -142,7 +138,7 @@ const styles = StyleSheet.create({
     textoDados: {
         margin: 'auto',
         color: '#FFF',
-        fontSize : 20,
+        fontSize : 15,
         fontWeight: 'bold',
         fontStyle : 'black',
     }
