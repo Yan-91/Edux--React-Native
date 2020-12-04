@@ -9,8 +9,6 @@ import Timeline from './pages/Timeline';
 import Alunos from './pages/Alunos';
 import Turmas from './pages/Turmas';
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faSchool, faChalkboardTeacher, faGraduationCap, faList } from '@fortawesome/free-solid-svg-icons'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -25,60 +23,25 @@ const Tab = createMaterialBottomTabNavigator();
 
 const Autenticado = () => {
   return(
-
-    <Tab.Navigator 
-      shifting={true}
-      activeColor="#fff"
-      barStyle={styles.navigation} 
-      initialRouteName='Home'>
-      <Tab.Screen 
-        name="Home" 
-        component={Home} 
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faSchool} color={color} size={26} />
-            ),
-          }}
-      />
-      <Tab.Screen name="Turmas" 
-        component={Indisponivel} 
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faChalkboardTeacher} color={color} size={26} />
-            ),
-          }}
-      />
-      <Tab.Screen name="Objetivos" 
-        component={Indisponivel} 
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faGraduationCap} color={color} size={26} />
-            ),
-          }}
-      />
-      <Tab.Screen name="Timeline" 
-        component={Timeline} 
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faList} color={color} size={26} />
-            ),
-          }}
-      />
+    <Tab.Navigator style={styles.navigation} initialRouteName='Home'>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Alunos" component={Alunos} />
+      <Tab.Screen name="Timeline" component={Timeline} />
     </Tab.Navigator>
   )
 }
 
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown : false }}>
-        {<Stack.Screen name="Login" component={Login} />}
-        <Stack.Screen name="Autenticado" component={Autenticado} />
+      <Stack.Navigator screenOptions={{ headerShown : false }} initialRouteName="Timeline">
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Indisponivel" component={Indisponivel} />
+        <Stack.Screen name="Timeline" component={Timeline} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Alunos" component={Alunos} />
+        <Stack.Screen name="Autenticado" component={Autenticado} />
       </Stack.Navigator>
   </NavigationContainer>
   );

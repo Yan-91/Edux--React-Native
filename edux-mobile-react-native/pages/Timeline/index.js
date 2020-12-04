@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { StyleSheet, View } from 'react-native';
 import Typo from '../../components/Typo';
 import Header from '../../components/Header';
@@ -15,6 +15,8 @@ function Timeline() {
     let normalText = (text)=> (
         <Typo type="regular" text={text} color="#9100d5" size="16px"/>
     )
+
+        
     return(
         <View style={styles.container}>
             <Header />
