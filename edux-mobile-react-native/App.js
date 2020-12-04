@@ -25,12 +25,6 @@ const Tab = createMaterialBottomTabNavigator();
 
 const Autenticado = () => {
   return(
-    <Tab.Navigator style={styles.navigation} initialRouteName='Home'>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Objetivo" component={Indisponivel} />
-      <Tab.Screen name="Turmas" component={Turmas} />
-      <Tab.Screen name="Timeline" component={Timeline} />
-      <Tab.Screen name="Alunos" component={Alunos} />
 
     <Tab.Navigator 
       shifting={true}
