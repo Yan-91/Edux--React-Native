@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './pages/Login';
@@ -9,18 +8,15 @@ import Timeline from './pages/Timeline';
 import Alunos from './pages/Alunos';
 import Turmas from './pages/Turmas';
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSchool, faChalkboardTeacher, faGraduationCap, faList } from '@fortawesome/free-solid-svg-icons'
 
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 const Autenticado = () => {

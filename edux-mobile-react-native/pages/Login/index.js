@@ -35,7 +35,7 @@ const Login = ({ navigation }) => {
         }
         
 
-        fetch(' http://192.168.15.37:5000/api/Login', {
+        fetch(' http://192.168.7.161:5000/api/Login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
