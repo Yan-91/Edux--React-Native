@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, FlatList } from 'react-native';
-import { useFonts } from 'expo-font';
 import Typo from '../../components/Typo';
 import ItemAluno from '../../components/itemAluno';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -25,7 +24,7 @@ const Alunos = ( {navigation} ) => {
     )
 
     const listarAlunos = () => {
-        fetch(' http://192.168.15.37:5000/api/Usuario', {
+        fetch(' http://192.168.7.161:5000/api/Usuario', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authentication': 'Bearer '+ token
@@ -51,7 +50,7 @@ const Alunos = ( {navigation} ) => {
 
     return (
         <View style={styles.container}>
-            <Header />
+            <Header navigation={navigation}/>
             <View style={styles.centerText}>
                 {boldTittle("ALUNOS")}
                 

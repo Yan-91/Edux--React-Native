@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import Logo from './../../assets/ImagemEdux.png'
 import { useFonts } from 'expo-font';
 
 // Async Storage = semelhante ao localStorage
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Alert } from 'react-native';
 
 const Login = ({ navigation }) => {
     let [fontsLoaded] = useFonts({
@@ -23,39 +24,34 @@ const Login = ({ navigation }) => {
         try {
             await AsyncStorage.setItem('@jwt', value)
         } catch (e) {
-            // saving error
+            console.log(e);
         }
     }
 
     const Logar = () => {
-
-        const corpo = {
-            Email: email,
-            Senha: senha
-        }
-        
 
         fetch(' http://192.168.7.161:5000/api/Login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(corpo)
+            body: JSON.stringify({
+                Email: email,
+                Senha: senha
+            })
         })
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) 
+                    return response.json();
+                Alert.alert(
+                    "Erro",
+                    "Email ou senha incorretos")
+            })
             .then(data => {
-                console.log(data);
-                if (data.status != 404) {
-                    alert('Seja bem vindo-a');
-                    console.log(data.token);
-
                     salvar(data.token);
                     navigation.push('Autenticado');
-                } else {
-                    alert('Dados inválidos!');
-                }
-            })
-
+                })
+            .catch(err => console.log(err));
     }
 
     return (

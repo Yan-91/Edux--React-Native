@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Header from '../../components/Header'
 import fotoPerfil from '../../assets/fotoPerfil.jpg'
 
 const Home = ( {navigation} ) => {
+
+    // const [usuario, setUsuario] = useState([]);
+    
+    // const rankUsuario = () => {
+        
+    //     const corpo = {
+    //         nome : nome
+    //     }
+    // }
+
+    // const listarAlunos = () => {
+    //     fetch(' http://192.168.7.161:5000/api/Usuario', {
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Authentication': 'Bearer '+ token
+    //         }
+    //     })
+    //         .then(response => response.json())
+            
+    //         .then(data => {
+    //             setUsuario(data)
+    //             console.log(data);
+    //         })
+    //         .catch(err => console.error(err));
+    // }
+
+    // useEffect(() => {
+
+    // })
+
     return(
                 <View>
                     <Header navigation={navigation}/>

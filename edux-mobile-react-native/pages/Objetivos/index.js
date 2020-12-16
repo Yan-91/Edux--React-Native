@@ -2,34 +2,43 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View  } from 'react-native';
 import Header from '../../components/Header'
 import { FlatList } from 'react-native-gesture-handler'
+import Typo from '../../components/Typo';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import ItemObjetivo from '../../components/itemObjetivo';
 
-import { Card, Title, Paragraph } from 'react-native-paper';
-
-const Objetivo = () =>{
-  useEffect(() => {
-    listarObjetivos();
-},[])
-
-
-  const ItemObjetivo = ({descricao}) => {
-    return (
-        <View style={styles.listItem}>
-            <View style={{alignItems:"center"}}>
-                <Text>{descricao}</Text>
-            </View>
-        </View>
-    )
-}
+const Objetivo = ({ navigation }) =>{
 
   const [objetivos, setObjetivos] = useState([]);
-  
+  const [token, setToken] = useState([]);
+
+  useEffect(() => {
+    AsyncStorage.getItem('@jwt')
+            .then(data => {
+                setToken(data)
+            })
+
+    listarObjetivos();
+}, []);
+
+let boldTittle = (text) => (
+  <Typo type="bold" text={text} color="#9100d5" size="24px" />
+)
+
 
 const listarObjetivos = () => {
-  fetch('http://192.168.0.34:5000/api/Objetivo')
+  fetch('http://192.168.7.161:5000/api/Objetivo', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authentication': 'Bearer ' + token
+      }
+  })
+
   .then(response => response.json())
+
   .then(dados => {
-      setObjetivos(dados);
+      setObjetivos(dados)
+      console.log(data);
   })
   .catch(err => console.error(err));
 }
@@ -43,46 +52,17 @@ const renderItem = ({item}) => {
   )
 }
     return(
-        <View>
-            <Header/>
-            <View style={styles.Container}>
-            <Text style={styles.tituloObjetivo}> OBJETIVOS</Text>
-            <FlatList style={styles.styleObjetivo}
-        data={objetivos} 
-        renderItem={renderItem} 
-        />
-         <Card style={styles.CardObjetivo}>
-            < Card.Content>
-            <Title>Objetivo 1</Title>
-            <Paragraph>descricao</Paragraph>
-            </Card.Content>
-            </Card>
-            <Card style={styles.CardObjetivo}>
-            < Card.Content>
-            <Title>Objetivo 2</Title>
-            <Paragraph>descricao</Paragraph>
-            </Card.Content>
-            </Card>
-            <Card style={styles.CardObjetivo}>
-            < Card.Content>
-            <Title>Objetivo 3</Title>
-            <Paragraph>descricao</Paragraph>
-            </Card.Content>
-            </Card>
-            <Card style={styles.CardObjetivo}>
-            < Card.Content>
-            <Title>Objetivo 4</Title>
-            <Paragraph>descricao</Paragraph>
-            </Card.Content>
-            </Card>
-            <Card style={styles.CardObjetivo}>
-            < Card.Content>
-            <Title>Objetivo 5</Title>
-            <Paragraph>descricao</Paragraph>
-            </Card.Content>
-            </Card>
-       
+        <View style={styles.container}>
+            <Header navigation={navigation}/>
+            <View style={styles.centerText}>
+                {boldTittle("OBJETIVOS")}
+
             </View>
+            <FlatList
+                      keyExtractor={item => item.id}
+                      data={objetivos} 
+                      renderItem={renderItem} 
+            />
         </View>
     )
 }
@@ -90,22 +70,14 @@ const renderItem = ({item}) => {
 export default Objetivo;
 
 const styles = StyleSheet.create({
-    Container :{
-        display : "flex",
-        width: 223,
-        margin : 60,
-        justifyContent: 'center',
-
-    },
-    tituloObjetivo: {
-      
-      
-      textAlign : 'center',
-      fontSize : 36,
-      fontWeight: 'bold',
-      fontStyle : 'black',
-      color: '#9200D6'
-    },
-   
-   
-  });
+  container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'start',
+  },
+  centerText: {
+      marginTop: 100,
+      textAlign: 'center'
+  }
+});

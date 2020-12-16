@@ -10,7 +10,7 @@ import Turmas from './pages/Turmas';
 import Objetivo from './pages/Objetivos';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faSchool, faChalkboardTeacher, faGraduationCap, faList } from '@fortawesome/free-solid-svg-icons'
+import { faSchool, faChalkboardTeacher, faGraduationCap, faList, faMale } from '@fortawesome/free-solid-svg-icons'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -66,7 +66,7 @@ const Autenticado = () => {
         options={{
           tabBarLabel: 'Alunos',
           tabBarIcon: ({ color }) => 
-            <FontAwesomeIcon icon={faList} color={color} size={26} />
+            <FontAwesomeIcon icon={faMale} color={color} size={26} />
           }}
       />
     </Tab.Navigator>

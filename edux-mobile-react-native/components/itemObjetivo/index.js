@@ -4,28 +4,21 @@ import { useFonts } from 'expo-font';
 
 
 
-const ItemAluno = (usuario) => {
+const ItemObjetivo = (objetivo) => {
     let [fontsLoaded] = useFonts({
         'TitilliumWeb_900Black': require('../../assets/fonts/TitilliumWeb_900Black.ttf'),
         'TitilliumWeb_400Regular': require('../../assets/fonts/TitilliumWeb_400Regular.ttf'),
         'TitilliumWeb_700Bold': require('../../assets/fonts/TitilliumWeb_700Bold.ttf'),
     });
 
-    const {nome, email, instituicao, turma} = usuario;
+    const {descricao} = objetivo;
 
     return (
         <View style={styles.listItem}>
             <View>
-                <Text style={styles.Text1}>Nome do usuário:<br/> 
-                {nome}</Text>
+                <Text style={styles.Text1}>Descrição:<br/> 
+                {descricao}</Text>
             </View>
-            <View>
-                <Text style={styles.Text2} >E-mail do usuário:<br/> 
-                {email}</Text>
-            </View>
-            <TouchableOpacity  style={{height:50,width:50, justifyContent:"center",alignItems:"center"}}>
-                <Text style={{color:"red"}}>Ver</Text>
-            </TouchableOpacity>
         </View>
     )
     
@@ -65,4 +58,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ItemAluno;
+export default ItemObjetivo;

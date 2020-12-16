@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import CreatePost from "../../components/Timeline/CreatePost";
 import Posts from '../../components/Timeline/Posts';
 
-function Timeline() {
+function Timeline( {navigation} ) {
     let boldTittle = (text)=>(
         <Typo type="bold" text={text} color="#9100d5" size="24px"/>
     )
@@ -17,7 +17,7 @@ function Timeline() {
     )
     return(
         <View style={styles.container}>
-            <Header />
+            <Header navigation={navigation}/>
             <View style={styles.centerText}>   
                 {boldTittle("POSTAGENS")}                 
             </View>            
