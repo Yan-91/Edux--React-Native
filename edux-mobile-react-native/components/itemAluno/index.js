@@ -23,9 +23,6 @@ const ItemAluno = (usuario) => {
                 <Text style={styles.Text2} >E-mail do usuário:<br/> 
                 {email}</Text>
             </View>
-            <TouchableOpacity  style={{height:50,width:50, justifyContent:"center",alignItems:"center"}}>
-                <Text style={{color:"red"}}>Ver</Text>
-            </TouchableOpacity>
         </View>
     )
     
