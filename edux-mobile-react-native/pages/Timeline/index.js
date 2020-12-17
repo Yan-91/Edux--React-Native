@@ -64,7 +64,7 @@ function Timeline( {navigation} ) {
             <View style={styles.centerText}>   
                 {boldTittle("POSTAGENS")}    
             <TextInput style={styles.box} placeholder="Qual sua dica pra hoje?" onChange={event => setTexto(event.target.value)} /> 
-            <View style={{ display: 'flex',flexDirection:'row',marginTop:10, margin: 'auto', padding: '5px 20px'}}>                                
+            <View style={{ display: 'flex',flexDirection:'row',marginTop:10, margin: 'auto'}}>                                
                 <Button
                     onPress={renderPost}
                     title="Adicionar imagem"
